@@ -18,6 +18,65 @@
       color: black;
     }
 
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar wrapper styling */
+.navbar-wrapper {
+  background-color: #333; /* Background color of the navbar */
+  padding: 10px 20px; /* Padding around the navigation */
+}
+
+/* Navbar styling */
+#navbar {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Center items vertically */
+}
+
+/* Logo styling */
+#logo {
+  color: #fff; /* Logo text color */
+  text-decoration: none; /* No underline */
+  font-size: 24px; /* Logo font size */
+}
+
+/* Navbar links styling */
+#navbar-right a {
+  color: #fff; /* Link text color */
+  text-decoration: none; /* No underline */
+  padding: 10px 15px; /* Padding around the links */
+  display: block; /* Block display for better click area */
+}
+
+/* Active link styling */
+#navbar-right .active {
+  background-color: #555; /* Background color for the active link */
+}
+
+/* Hover effect (optional) */
+#navbar-right a:hover {
+  background-color: #444; /* Background color on hover */
+}
+
+/* Responsive styling (optional) */
+@media (max-width: 600px) {
+  #navbar {
+    flex-direction: column; /* Stack items on small screens */
+    align-items: flex-start; /* Align items to the left */
+  }
+}
+
+
+
     header {
       background-color: black;
       color: rgb(238, 122, 13);
@@ -201,10 +260,53 @@
 }
 
 .about-section p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: #131212;
   margin-bottom: 1rem;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    color:rgb(255, 145, 0);
+    margin: 0;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(255, 145, 0);
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
 }
 
 
@@ -215,19 +317,22 @@
 <div class="mobile-container">
 
 <!-- Top Navigation Menu -->
-<div class="topnav">
-  <a href="#home" class="active"><H1>mR</H1></a>
-  <div id="myLinks">
-    <a href="#Home">Home</a>
-    <a href="#about">About</a>
-    <a href="#Projects">Projects</a>
-    <a href="#contact">Contact</a>
-    
-  </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+<header>
+        <div class="logo">
+            <h1>m.R</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
 
 <section id="Home" style="background-color:white; color: white; margin-left: -15px; margin-right: -15px; padding: 60px 0;">
     <div class="container text-center">
@@ -274,7 +379,7 @@
       <!-- Each project as a circle -->
       <a href="T-shirt.jpg" data-lightbox="projects" data-title="Branded shirts: Branded with a pixanap logo." class="text-decoration-none text-white text-center">
         <img src="T-shirt.jpg" alt="Branded shirts" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>T-shirt</div>
+        <div>Branded shirts</div>
       </a>
 
       <a href="cute.png" data-lightbox="projects" data-title="Branded Bottle: Branded with a pixanap logo" class="text-decoration-none text-white text-center">
@@ -290,12 +395,12 @@
       
       <a href="INVOICE.jpg" data-lightbox="projects" data-title="INVOICE: A well balanced poster design." class="text-decoration-none text-white text-center">
         <img src="INVOICE.jpg" alt="INVOICE" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>INVOICEr</div>
+        <div>Pixanap Poster</div>
       </a>
 
       <a href="Pixanap Receipt.jpg" data-lightbox="projects" data-title="Pixanap Receipt: A well balanced poster design." class="text-decoration-none text-white text-center">
         <img src="Pixanap Receipt.jpg" alt="Pixanap Receipt" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Receipt</div>
+        <div>Pixanap Poster</div>
       </a>
 
      <a href="logo4.PNG" data-lightbox="projects" data-title="logo4: A well balanced poster design." class="text-decoration-none text-white text-center">
@@ -341,6 +446,11 @@
       <a href="mobile money [Recovered].jpg" data-lightbox="projects" data-title="Banner: A design created for the LINGOTTO LTD Co." class="text-decoration-none text-white text-center">
         <img src="mobile money [Recovered].jpg" alt="Banner Design" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
         <div>Mobile Money Banner</div>
+      </a>
+
+      <a href="yts bsc.jpg" data-lightbox="projects" data-title="Business Card: My business card." class="text-decoration-none text-white text-center">
+        <img src="yts bsc.jpg" alt="YTS Business Card" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
+        <div>YTS Business Card</div>
       </a>
 
       <a href="YTS POST-CARD.jpg" data-lightbox="projects" data-title="Web post card: An advert web post card designed for YTS Solutions." class="text-decoration-none text-white text-center">
@@ -481,17 +591,21 @@
   
 </body>
 </html>
-
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById("navMenu");
-    if (menu.style.display === "none" || menu.style.display === "") {
-      menu.style.display = "block";
-    } else {
-      menu.style.display = "none";
-    }
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
   }
+}
 </script>
+
 
 <style>
   #socials a i {
