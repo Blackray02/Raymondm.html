@@ -1,635 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Portfolio</title>
-  <link rel="icon" href="Blackraylogo.png" type="image/png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: rgb(253, 251, 251);
-      color: black;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mawerere Raymond | Creative Designer</title>
 
-/* Reset some default styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<link rel="icon" href="Blackraylogo.png" type="image/png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:#0f0f0f;
+  color:white;
+  scroll-behavior:smooth;
 }
 
-body {
-  font-family: Arial, sans-serif;
+section{
+  padding:100px 0;
 }
 
-/* Navbar wrapper styling */
-.navbar-wrapper {
-  background-color: #333; /* Background color of the navbar */
-  padding: 10px 20px; /* Padding around the navigation */
+h1,h2,h3{
+  font-weight:700;
 }
 
-/* Navbar styling */
-#navbar {
-  display: flex; /* Flexbox for horizontal alignment */
-  justify-content: space-between; /* Space between logo and links */
-  align-items: center; /* Center items vertically */
+/* ===== NAVBAR ===== */
+.navbar{
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(10px);
 }
 
-/* Logo styling */
-#logo {
-  color: #fff; /* Logo text color */
-  text-decoration: none; /* No underline */
-  font-size: 24px; /* Logo font size */
+.navbar-brand{
+  color:#ff7f00 !important;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-/* Navbar links styling */
-#navbar-right a {
-  color: #fff; /* Link text color */
-  text-decoration: none; /* No underline */
-  padding: 10px 15px; /* Padding around the links */
-  display: block; /* Block display for better click area */
+.nav-link{
+  color:white !important;
+  margin-left:20px;
+  transition:0.3s;
 }
 
-/* Active link styling */
-#navbar-right .active {
-  background-color: #555; /* Background color for the active link */
+.nav-link:hover{
+  color:#ff7f00 !important;
 }
 
-/* Hover effect (optional) */
-#navbar-right a:hover {
-  background-color: #444; /* Background color on hover */
+/* ===== HERO ===== */
+#hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,#000,#1a1a1a);
 }
 
-/* Responsive styling (optional) */
-@media (max-width: 600px) {
-  #navbar {
-    flex-direction: column; /* Stack items on small screens */
-    align-items: flex-start; /* Align items to the left */
-  }
+#hero img{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid #ff7f00;
+  box-shadow:0 0 40px rgba(255,127,0,0.6);
 }
 
-
-
-    header {
-      background-color: black;
-      color: rgb(238, 122, 13);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      text-align: left;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #555;
-      font-size: 12px;
-      text-align: left;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: right;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
-
-    nav ul li a {
-      color: rgb(245, 136, 11);
-      text-decoration: none;
-    }
-
-    section {
-      padding: 50px;
-      text-align: center;
-    }
-
-    section h2 {
-      color: rgb(238, 120, 10);
-    }
-
-    section h1 {
-      color: rgb(238, 120, 10);
-    }
-
-    section h6 {
-      color: rgb(82, 82, 82);
-    }
-
-    .project-card {
-      background-color: rgb(12, 12, 12);
-      color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .project-card h3 {
-      margin-top: 0;
-    }
-
-    .project-card a {
-      color: white;
-      text-decoration: none;
-    }
-
-    footer {
-      background-color: black;
-      color: rgb(245, 139, 18);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .blog-image {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .blog-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .blog-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
-
-    .blog-overlay h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .blog-overlay p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .blog-overlay a {
-      font-size: 16px;
-      padding: 10px 20px;
-      text-decoration: none;
-      background-color: rgb(255, 145, 0);
-      border: none;
-      border-radius: 5px;
-    }
-
-    .blog-overlay a:hover {
-      background-color: #ff7f00;
-    }
-
-    body {
-  font-family: Arial, Helvetica, sans-serif;
+#hero h1{
+  font-size:42px;
+  margin-top:20px;
 }
 
-.mobile-container {
-  max-width: auto;
-  margin: auto;
-  background-color: #555;
-  height: auto;
-  color: white;
-  border-radius: 10px;
+#hero p{
+  color:#bbb;
+  font-size:18px;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color:  #555;
-  position: relative;
+.btn-main{
+  background:#ff7f00;
+  border:none;
+  padding:12px 30px;
+  border-radius:30px;
+  margin-top:20px;
+  transition:0.3s;
 }
 
-.topnav #myLinks {
-  display: block;
+.btn-main:hover{
+  background:#ff5500;
+  transform:translateY(-4px);
 }
 
-.topnav a {
-  float: left;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+/* ===== ABOUT ===== */
+#about{
+  background:#161616;
 }
 
-.topnav a.icon {
-  float: right;
+#about p{
+  color:#ccc;
+  max-width:800px;
+  margin:auto;
+  line-height:1.7;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+/* ===== PROJECT GRID ===== */
+#projects{
+  background:#111;
 }
 
-.active {
-  background-color: rgb(255, 145, 0);
-  color: white;
+.project-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
 }
 
-.about-section {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.project-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
 }
 
-.about-section h2 {
-  font-size: 2rem;
-  color: rgb(255, 145, 0);
-  margin-bottom: 1rem;
+.project-card:hover img{
+  transform:scale(1.1);
 }
 
-.about-section p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #131212;
-  margin-bottom: 1rem;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 10px 20px;
+.project-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:0.4s;
+  text-align:center;
+  padding:20px;
 }
 
-.logo h1 {
-    color:rgb(255, 145, 0);
-    margin: 0;
+.project-card:hover .project-overlay{
+  opacity:1;
 }
 
-nav {
-    flex-grow: 1;
+.project-overlay h5{
+  color:#ff7f00;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
+/* ===== CONTACT ===== */
+#contact{
+  background:#161616;
 }
 
-.menu li {
-    margin-left: 20px;
+.form-control{
+  background:#0f0f0f;
+  border:1px solid #333;
+  color:white;
 }
 
-.menu a {
-    text-decoration: none;
-    color: rgb(255, 145, 0);
-    padding: 8px 12px;
-    transition: background-color 0.3s;
+.form-control:focus{
+  border-color:#ff7f00;
+  box-shadow:none;
 }
 
-.menu a:hover {
-    background-color: #555;
+/* ===== SOCIALS ===== */
+#socials{
+  background:#0a0a0a;
+  padding:60px 0;
 }
 
+.social-icon{
+  font-size:28px;
+  margin:0 15px;
+  color:white;
+  transition:0.3s;
+}
 
-  </style>
+.social-icon:hover{
+  color:#ff7f00;
+  transform:scale(1.3);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:black;
+  padding:20px;
+  text-align:center;
+  color:#777;
+}
+
+</style>
 </head>
 <body>
 
-<div class="mobile-container">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">m.R</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-<!-- Top Navigation Menu -->
-<header>
-        <div class="logo">
-            <h1>m.R</h1>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-</html>
+<div class="collapse navbar-collapse justify-content-end" id="navmenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-
-<section id="Home" style="background-color:white; color: white; margin-left: -15px; margin-right: -15px; padding: 60px 0;">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <!-- Circular Portfolio Image -->
-                <img src="black.jpeg" alt="Portfolio Image" 
-                     class="img-fluid rounded-circle mb-4" 
-                     style="width: 250px; height: 250px; object-fit: cover; border: 4px solid white;">
-
-                <!-- Description Text Below Image -->
-                <h1 class="mb-3">"I am M.RAYMOND"</h1>
-                <h6><p class="mb-4">Designing Dreams, One Pixel at a Time.</p></h6>
-                <a href="#about" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
+<!-- HERO -->
+<section id="hero">
+<div>
+<img src="black.jpeg" alt="Profile">
+<h1>I am Raymond</h1>
+<p>Designing Dreams, One Pixel at a Time.</p>
+<a href="#projects" class="btn btn-main">View My Work</a>
+</div>
 </section>
 
-
-  <section id="about">
-    <section id="about" class="about-section">
-  <h2>🎨 About Me</h2>
-  <p>
-    I'm a passionate and detail-driven graphic designer with a strong eye for visual storytelling and brand identity. 
-    With hands-on experience in creating impactful designs—ranging from logos, posters, and corporate materials to digital 
-    content for social media—I help individuals and businesses visually express their purpose with clarity and creativity.
-  </p>
-  <p>
-    I believe design isn’t just about looking good; it’s about <strong>solving problems</strong> and 
-    <strong>communicating value</strong>. Every project I take on is handled with professionalism, timely delivery, and a 
-    commitment to excellence. Whether you're building a brand from scratch or leveling up your existing visuals, I'm here 
-    to bring your vision to life—pixel by pixel.
-  </p>
+<!-- ABOUT -->
+<section id="about">
+<div class="container text-center">
+<h2 class="mb-4" style="color:#ff7f00;">About Me</h2>
+<p>
+I’m a passionate graphic designer focused on brand identity, visual storytelling,
+and impactful creative solutions. I don’t just design — I communicate value.
+</p>
+</div>
 </section>
 
-  
-  </section>      
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h2 class="text-center mb-5" style="color:#ff7f00;">Selected Projects</h2>
 
-  <section id="Projects">
-    <h2>Projects</h2>
+<div class="row g-4">
 
-    <div class="d-flex overflow-auto px-2" style="gap: 20px;">
-      <!-- Each project as a circle -->
-      <a href="Detour.png" data-lightbox="projects" data-title="Detour Studio Logo." class="text-decoration-none text-white text-center">
-        <img src="Detour.png" alt="Detour" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Detour Studio Logo</div>
-      </a>
-      
-      <a href="T-shirt.jpg" data-lightbox="projects" data-title="Branded shirts: Branded with a pixanap logo." class="text-decoration-none text-white text-center">
-        <img src="T-shirt.jpg" alt="Branded shirts" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Branded shirts</div>
-      </a>
-
-      <a href="cute.png" data-lightbox="projects" data-title="Branded Bottle: Branded with a pixanap logo" class="text-decoration-none text-white text-center">
-        <img src="cute.png" alt="Branded Bottle" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Branded Bottle</div>
-      </a>
-
-      <!-- Repeat this block for each image -->
-      <a href="pixanap poster.jpg" data-lightbox="projects" data-title="Pixanap Poster: A well balanced poster design." class="text-decoration-none text-white text-center">
-        <img src="pixanap poster.jpg" alt="Pixanap Poster" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Poster</div>
-      </a>
-      
-      <a href="INVOICE.jpg" data-lightbox="projects" data-title="INVOICE: A well balanced poster design." class="text-decoration-none text-white text-center">
-        <img src="INVOICE.jpg" alt="INVOICE" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Poster</div>
-      </a>
-
-      <a href="Pixanap Receipt.jpg" data-lightbox="projects" data-title="Pixanap Receipt: A well balanced poster design." class="text-decoration-none text-white text-center">
-        <img src="Pixanap Receipt.jpg" alt="Pixanap Receipt" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Poster</div>
-      </a>
-
-     <a href="logo4.PNG" data-lightbox="projects" data-title="logo4: A well balanced poster design." class="text-decoration-none text-white text-center">
-        <img src="logo4.PNG" alt="logo4" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Poster</div>
-      </a>
-
-      <a href="pixanap2.png" data-lightbox="projects" data-title="pixanap2: A well balanced poster design." class="text-decoration-none text-white text-center">
-        <img src="pixanap2.png" alt="pixanap2" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Poster</div>
-      </a>
-
-      <a href="Pixanap B-Card-1.jpg" data-lightbox="projects" data-title="Business Card: Front face." class="text-decoration-none text-white text-center">
-        <img src="Pixanap B-Card-1.jpg" alt="Business Card Front" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Business Card (Front)</div>
-      </a>
-
-      <a href="Pixanap B-Card-2.jpg" data-lightbox="projects" data-title="Business Card: Back face." class="text-decoration-none text-white text-center">
-        <img src="Pixanap B-Card-2.jpg" alt="Business Card Back" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Business Card (Back)</div>
-      </a>
-
-      <a href="ULITO.png" data-lightbox="projects" data-title="ULITO: An emblem logo design created for the ULITO group." class="text-decoration-none text-white text-center">
-        <img src="ULITO.png" alt="ULITO" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>ULITO Logo</div>
-      </a>
-
-      <a href="px.JPG" data-lightbox="projects" data-title="Logo: Trial Sample." class="text-decoration-none text-white text-center">
-        <img src="px.JPG" alt="Logo Sample" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Logo Sample</div>
-      </a>
-
-      <a href="Sticker.png" data-lightbox="projects" data-title="Sticker: A simple pixanap logo sticker." class="text-decoration-none text-white text-center">
-        <img src="Sticker.png" alt="Sticker" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pixanap Sticker</div>
-      </a>
-
-      <a href="mr.png" data-lightbox="projects" data-title="Monogram: Mawerere Raymond." class="text-decoration-none text-white text-center">
-        <img src="mr.png" alt="Monogram" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Monogram</div>
-      </a>
-
-      <a href="mobile money [Recovered].jpg" data-lightbox="projects" data-title="Banner: A design created for the LINGOTTO LTD Co." class="text-decoration-none text-white text-center">
-        <img src="mobile money [Recovered].jpg" alt="Banner Design" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Mobile Money Banner</div>
-      </a>
-
-      <a href="yts bsc.jpg" data-lightbox="projects" data-title="Business Card: My business card." class="text-decoration-none text-white text-center">
-        <img src="yts bsc.jpg" alt="YTS Business Card" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>YTS Business Card</div>
-      </a>
-
-      <a href="YTS POST-CARD.jpg" data-lightbox="projects" data-title="Web post card: An advert web post card designed for YTS Solutions." class="text-decoration-none text-white text-center">
-        <img src="YTS POST-CARD.jpg" alt="Post Card" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>YTS Post Card</div>
-      </a>
-
-      <a href="Pull up Banner.jpg" data-lightbox="projects" data-title="Pull up Banner: A Pull up banner design for pixanap." class="text-decoration-none text-white text-center">
-        <img src="Pull up Banner.jpg" alt="Pull up Banner" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Pull-Up Banner</div>
-      </a>
-
-      <a href="Flier.jpg" data-lightbox="projects" data-title="Flier: YTS tech solutions flier design." class="text-decoration-none text-white text-center">
-        <img src="Flier.jpg" alt="Flier" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>YTS Flier</div>
-      </a>
-
-      <a href="Access poster.jpg" data-lightbox="projects" data-title="Sample Poster: Test trial poster." class="text-decoration-none text-white text-center">
-        <img src="Access poster.jpg" alt="Sample Poster" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Access Poster</div>
-      </a>
-
-      <a href="1.jpg" data-lightbox="projects" data-title="Project Title 2: Description of project 2." class="text-decoration-none text-white text-center">
-        <img src="1.jpg" alt="Project 2" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Project Sample</div>
-      </a>
-
-      <a href="B & Y.png" data-lightbox="projects" data-title="B & Y Tech solutions Logo: Brand logo." class="text-decoration-none text-white text-center">
-        <img src="B & Y.png" alt="B & Y Logo" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>B & Y Logo</div>
-      </a>
-
-      <a href="Poster-Recovered.jpg" data-lightbox="projects" data-title="Trip Poster: Poster design for a client." class="text-decoration-none text-white text-center">
-        <img src="Poster-Recovered.jpg" alt="Trip Poster" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
-        <div>Trip Poster</div>
-      </a>
-
-    </div>
-
-      <!-- Continue for all other projects -->
-    </div>
-  </div>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="container"> 
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <h3 class="text-center">Get in Touch</h3> 
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="baa5d4c1-7925-401a-8185-d3c1b438a61e">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  
- 
-<section id="cta">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2>Ready to Start Your Next Project?</h2>
-        <p>Let's work together to bring your ideas to life.</p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">
-          Contact Me
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Administrator Contact Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Email: raymondmawerere@gmail.com</p>
-        <p>Phone: +256 762 892600</p>
-        <p>Address: Kiwatule Rd,Kampala</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+<!-- 1 -->
+<div class="col-md-4">
+<a href="Detour.png" data-lightbox="projects" class="project-card">
+<img src="Detour.png">
+<div class="project-overlay"><h5>Detour Studio Logo</h5></div>
+</a>
 </div>
 
-<section id="socials" style="background-color: #111; color: white; padding: 40px 0;">
-  <div class="container text-center">
-    <h2 class="mb-4">Connect with Me</h2>
-    <p class="mb-4">Follow me on my social platforms and stay updated.</p>
-    
-    <div class="d-flex justify-content-center gap-4 flex-wrap">
-      <a href="https://www.facebook.com/blackray002" target="_blank" class="text-white">
-        <i class="fab fa-facebook fa-2x"></i>
-      </a>
-      <a href="https://www.instagram.com/blackray002" target="_blank" class="text-white">
-        <i class="fab fa-instagram fa-2x"></i>
-      </a>
-      <a href="https://x.com/black76480" target="_blank" class="text-white">
-        <i class="fab fa-x fa-2x"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/mawerere-raymond-019930253" target="_blank" class="text-white">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <a href="https://tiktok.com/@blackray002" target="_blank" class="text-white">
-        <i class="fab fa-tiktok fa-2x"></i>
-      </a>
-    </div>
-  </div>
+<!-- 2 -->
+<div class="col-md-4">
+<a href="T-shirt.jpg" data-lightbox="projects" class="project-card">
+<img src="T-shirt.jpg">
+<div class="project-overlay"><h5>Branded Shirts</h5></div>
+</a>
+</div>
+
+<!-- 3 -->
+<div class="col-md-4">
+<a href="cute.png" data-lightbox="projects" class="project-card">
+<img src="cute.png">
+<div class="project-overlay"><h5>Branded Bottle</h5></div>
+</a>
+</div>
+
+<!-- 4 -->
+<div class="col-md-4">
+<a href="pixanap poster.jpg" data-lightbox="projects" class="project-card">
+<img src="pixanap poster.jpg">
+<div class="project-overlay"><h5>Pixanap Poster</h5></div>
+</a>
+</div>
+
+<!-- 5 -->
+<div class="col-md-4">
+<a href="INVOICE.jpg" data-lightbox="projects" class="project-card">
+<img src="INVOICE.jpg">
+<div class="project-overlay"><h5>Invoice Design</h5></div>
+</a>
+</div>
+
+<!-- 6 -->
+<div class="col-md-4">
+<a href="Pixanap Receipt.jpg" data-lightbox="projects" class="project-card">
+<img src="Pixanap Receipt.jpg">
+<div class="project-overlay"><h5>Pixanap Receipt</h5></div>
+</a>
+</div>
+
+<!-- 7 -->
+<div class="col-md-4">
+<a href="logo4.PNG" data-lightbox="projects" class="project-card">
+<img src="logo4.PNG">
+<div class="project-overlay"><h5>Logo Concept</h5></div>
+</a>
+</div>
+
+<!-- 8 -->
+<div class="col-md-4">
+<a href="pixanap2.png" data-lightbox="projects" class="project-card">
+<img src="pixanap2.png">
+<div class="project-overlay"><h5>Pixanap Design</h5></div>
+</a>
+</div>
+
+<!-- 9 -->
+<div class="col-md-4">
+<a href="Pixanap B-Card-1.jpg" data-lightbox="projects" class="project-card">
+<img src="Pixanap B-Card-1.jpg">
+<div class="project-overlay"><h5>Business Card (Front)</h5></div>
+</a>
+</div>
+
+<!-- 10 -->
+<div class="col-md-4">
+<a href="Pixanap B-Card-2.jpg" data-lightbox="projects" class="project-card">
+<img src="Pixanap B-Card-2.jpg">
+<div class="project-overlay"><h5>Business Card (Back)</h5></div>
+</a>
+</div>
+
+<!-- 11 -->
+<div class="col-md-4">
+<a href="ULITO.png" data-lightbox="projects" class="project-card">
+<img src="ULITO.png">
+<div class="project-overlay"><h5>ULITO Logo</h5></div>
+</a>
+</div>
+
+<!-- 12 -->
+<div class="col-md-4">
+<a href="px.JPG" data-lightbox="projects" class="project-card">
+<img src="px.JPG">
+<div class="project-overlay"><h5>Logo Sample</h5></div>
+</a>
+</div>
+
+<!-- 13 -->
+<div class="col-md-4">
+<a href="Sticker.png" data-lightbox="projects" class="project-card">
+<img src="Sticker.png">
+<div class="project-overlay"><h5>Pixanap Sticker</h5></div>
+</a>
+</div>
+
+<!-- 14 -->
+<div class="col-md-4">
+<a href="mr.png" data-lightbox="projects" class="project-card">
+<img src="mr.png">
+<div class="project-overlay"><h5>Monogram</h5></div>
+</a>
+</div>
+
+<!-- 15 -->
+<div class="col-md-4">
+<a href="mobile money [Recovered].jpg" data-lightbox="projects" class="project-card">
+<img src="mobile money [Recovered].jpg">
+<div class="project-overlay"><h5>Mobile Money Banner</h5></div>
+</a>
+</div>
+
+<!-- 16 -->
+<div class="col-md-4">
+<a href="yts bsc.jpg" data-lightbox="projects" class="project-card">
+<img src="yts bsc.jpg">
+<div class="project-overlay"><h5>YTS Business Card</h5></div>
+</a>
+</div>
+
+<!-- 17 -->
+<div class="col-md-4">
+<a href="YTS POST-CARD.jpg" data-lightbox="projects" class="project-card">
+<img src="YTS POST-CARD.jpg">
+<div class="project-overlay"><h5>YTS Post Card</h5></div>
+</a>
+</div>
+
+<!-- 18 -->
+<div class="col-md-4">
+<a href="Pull up Banner.jpg" data-lightbox="projects" class="project-card">
+<img src="Pull up Banner.jpg">
+<div class="project-overlay"><h5>Pull-Up Banner</h5></div>
+</a>
+</div>
+
+<!-- 19 -->
+<div class="col-md-4">
+<a href="Flier.jpg" data-lightbox="projects" class="project-card">
+<img src="Flier.jpg">
+<div class="project-overlay"><h5>YTS Flier</h5></div>
+</a>
+</div>
+
+<!-- 20 -->
+<div class="col-md-4">
+<a href="Access poster.jpg" data-lightbox="projects" class="project-card">
+<img src="Access poster.jpg">
+<div class="project-overlay"><h5>Access Poster</h5></div>
+</a>
+</div>
+
+<!-- 21 -->
+<div class="col-md-4">
+<a href="1.jpg" data-lightbox="projects" class="project-card">
+<img src="1.jpg">
+<div class="project-overlay"><h5>Project Sample</h5></div>
+</a>
+</div>
+
+<!-- 22 -->
+<div class="col-md-4">
+<a href="B & Y.png" data-lightbox="projects" class="project-card">
+<img src="B & Y.png">
+<div class="project-overlay"><h5>B & Y Logo</h5></div>
+</a>
+</div>
+
+<!-- 23 -->
+<div class="col-md-4">
+<a href="Poster-Recovered.jpg" data-lightbox="projects" class="project-card">
+<img src="Poster-Recovered.jpg">
+<div class="project-overlay"><h5>Trip Poster</h5></div>
+</a>
+</div>
+
+</div>
+</div>
 </section>
 
-  <footer>
-    <p>&copy; 2024 Mawerere Raymond</p>
-  </footer>
-  
-</body>
-</html>
-<script>
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-  } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
-  }
-}
-</script>
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<h2 class="text-center mb-4" style="color:#ff7f00;">Let’s Work Together</h2>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+<input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
+<input type="email" name="email" class="form-control mb-3" placeholder="Your Email">
+<textarea name="message" rows="5" class="form-control mb-3" placeholder="Your Message"></textarea>
+<button class="btn btn-main w-100">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 
+<!-- SOCIALS -->
+<section id="socials" class="text-center">
+<h4 class="mb-4">Connect With Me</h4>
+<a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+<a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+<a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+<a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+</section>
 
-<style>
-  #socials a i {
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
+<footer>
+© 2026 Mawerere Raymond
+</footer>
 
-  #socials a:hover i {
-    transform: scale(1.2);
-    color:  #ff7f00;
-  }
-</style>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
 
 </body>
 </html>
