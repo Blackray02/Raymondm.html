@@ -226,54 +226,114 @@
       background: #101010;
     }
 
+    .work-intro {
+      max-width: 720px;
+      margin: -8px auto 28px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .work-filters,
+    .photo-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .work-filter,
+    .photo-filter {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .work-filter:hover,
+    .work-filter:focus,
+    .work-filter.active,
+    .photo-filter:hover,
+    .photo-filter:focus,
+    .photo-filter.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .project-item {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .project-item.is-hidden {
+      display: none;
+    }
+
     .project-card {
       position: relative;
       display: block;
       overflow: hidden;
       border-radius: 12px;
-      background: #080808;
-      min-height: 250px;
+      background: #0b0b0b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .project-card img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+        #151515;
+      padding: 12px;
       transition: transform 0.45s ease;
+    }
+
+    .project-card.tall img {
+      aspect-ratio: 3 / 4;
     }
 
     .project-card:hover img,
     .project-card:focus img {
-      transform: scale(1.08);
+      transform: scale(1.03);
     }
 
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.72);
-      opacity: 0;
-      padding: 20px;
-      text-align: center;
-      transition: opacity 0.3s ease;
+    .work-info {
+      padding: 14px 2px 0;
     }
 
-    .project-card:hover .project-overlay,
-    .project-card:focus .project-overlay {
-      opacity: 1;
+    .work-info h3 {
+      color: var(--text);
+      font-size: 1.02rem;
+      margin: 0 0 4px;
     }
 
-    .project-overlay h3 {
-      color: var(--accent);
-      font-size: 1.05rem;
+    .work-info p {
+      color: var(--muted);
       margin: 0;
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+
+    .work-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .photo-intro {
       max-width: 720px;
-      margin: -8px auto 36px;
+      margin: -8px auto 28px;
       color: var(--muted);
       text-align: center;
       line-height: 1.7;
@@ -286,6 +346,14 @@
       border-radius: 12px;
       background: #080808;
       aspect-ratio: 4 / 5;
+    }
+
+    .photo-item {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .photo-item.is-hidden {
+      display: none;
     }
 
     .photo-card.wide {
@@ -317,6 +385,13 @@
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .photo-caption small {
+      display: block;
+      margin-top: 4px;
+      color: #d5d5d5;
+      font-weight: 500;
     }
 
     .photo-card:hover .photo-caption,
@@ -512,166 +587,270 @@
     <section id="projects">
       <div class="container">
         <h2 class="section-title">Selected Projects</h2>
+        <p class="work-intro">
+          A curated mix of brand identity, print layouts, posters, merchandise, and visual concepts presented with room for each piece to breathe.
+        </p>
+
+        <div class="work-filters" aria-label="Filter selected projects">
+          <button class="work-filter active" type="button" data-filter="all" aria-pressed="true">All Work</button>
+          <button class="work-filter" type="button" data-filter="brand" aria-pressed="false">Brand Identity</button>
+          <button class="work-filter" type="button" data-filter="print" aria-pressed="false">Print Design</button>
+          <button class="work-filter" type="button" data-filter="posters" aria-pressed="false">Posters</button>
+          <button class="work-filter" type="button" data-filter="merchandise" aria-pressed="false">Merchandise</button>
+        </div>
+
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="Detour.png" data-lightbox="projects" data-title="Detour Studio Logo" class="project-card">
               <img src="Detour.png" alt="Detour Studio logo design">
-              <div class="project-overlay"><h3>Detour Studio Logo</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Detour Studio Logo</h3>
+              <p>Logo mark crafted for a clean, memorable studio identity.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="merchandise">
             <a href="T-shirt.jpg" data-lightbox="projects" data-title="Branded Shirts" class="project-card">
               <img src="T-shirt.jpg" alt="Branded shirt design">
-              <div class="project-overlay"><h3>Branded Shirts</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Merchandise</span>
+              <h3>Branded Shirts</h3>
+              <p>Wearable brand design for everyday visibility.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="merchandise">
             <a href="cute.png" data-lightbox="projects" data-title="Branded Bottle" class="project-card">
               <img src="cute.png" alt="Branded bottle design">
-              <div class="project-overlay"><h3>Branded Bottle</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Merchandise</span>
+              <h3>Branded Bottle</h3>
+              <p>Product mockup showing how the brand lives on objects.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="pixanap poster.jpg" data-lightbox="projects" data-title="Pixanap Poster" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="pixanap poster.jpg" data-lightbox="projects" data-title="Pixanap Poster" class="project-card tall">
               <img src="pixanap poster.jpg" alt="Pixanap poster design">
-              <div class="project-overlay"><h3>Pixanap Poster</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>Pixanap Poster</h3>
+              <p>Promotional poster layout with a bold visual hierarchy.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="INVOICE.jpg" data-lightbox="projects" data-title="Invoice Design" class="project-card">
               <img src="INVOICE.jpg" alt="Invoice design layout">
-              <div class="project-overlay"><h3>Invoice Design</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>Invoice Design</h3>
+              <p>Business document layout designed for clarity and trust.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="Pixanap Receipt.jpg" data-lightbox="projects" data-title="Pixanap Receipt" class="project-card">
               <img src="Pixanap Receipt.jpg" alt="Pixanap receipt design">
-              <div class="project-overlay"><h3>Pixanap Receipt</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>Pixanap Receipt</h3>
+              <p>Receipt design that keeps brand details consistent.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="logo4.PNG" data-lightbox="projects" data-title="Logo Concept" class="project-card">
               <img src="logo4.PNG" alt="Logo concept design">
-              <div class="project-overlay"><h3>Logo Concept</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Logo Concept</h3>
+              <p>Exploration of shape, name, and visual personality.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="pixanap2.png" data-lightbox="projects" data-title="Pixanap Design" class="project-card">
               <img src="pixanap2.png" alt="Pixanap graphic design sample">
-              <div class="project-overlay"><h3>Pixanap Design</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Pixanap Design</h3>
+              <p>Visual identity sample for a consistent brand presence.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="Pixanap B-Card-1.jpg" data-lightbox="projects" data-title="Business Card Front" class="project-card">
               <img src="Pixanap B-Card-1.jpg" alt="Pixanap business card front design">
-              <div class="project-overlay"><h3>Business Card Front</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>Business Card Front</h3>
+              <p>Front-facing card layout with clear contact presence.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="Pixanap B-Card-2.jpg" data-lightbox="projects" data-title="Business Card Back" class="project-card">
               <img src="Pixanap B-Card-2.jpg" alt="Pixanap business card back design">
-              <div class="project-overlay"><h3>Business Card Back</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>Business Card Back</h3>
+              <p>Back design that supports the full card identity.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="ULITO.png" data-lightbox="projects" data-title="ULITO Logo" class="project-card">
               <img src="ULITO.png" alt="ULITO logo design">
-              <div class="project-overlay"><h3>ULITO Logo</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>ULITO Logo</h3>
+              <p>Logo design focused on recognition and simplicity.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="px.JPG" data-lightbox="projects" data-title="Logo Sample" class="project-card">
               <img src="px.JPG" alt="Logo design sample">
-              <div class="project-overlay"><h3>Logo Sample</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Logo Sample</h3>
+              <p>Brand mark sample with a compact visual direction.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="Sticker.png" data-lightbox="projects" data-title="Pixanap Sticker" class="project-card">
               <img src="Sticker.png" alt="Pixanap sticker design">
-              <div class="project-overlay"><h3>Pixanap Sticker</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>Pixanap Sticker</h3>
+              <p>Small-format brand design for printed touchpoints.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="mr.png" data-lightbox="projects" data-title="Monogram" class="project-card">
               <img src="mr.png" alt="MR monogram logo">
-              <div class="project-overlay"><h3>Monogram</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Monogram</h3>
+              <p>Personal mark built around initials and recognition.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="mobile money [Recovered].jpg" data-lightbox="projects" data-title="Mobile Money Banner" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="mobile money [Recovered].jpg" data-lightbox="projects" data-title="Mobile Money Banner" class="project-card tall">
               <img src="mobile money [Recovered].jpg" alt="Mobile money banner design">
-              <div class="project-overlay"><h3>Mobile Money Banner</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>Mobile Money Banner</h3>
+              <p>Service banner designed for quick communication.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
             <a href="yts bsc.jpg" data-lightbox="projects" data-title="YTS Business Card" class="project-card">
               <img src="yts bsc.jpg" alt="YTS business card design">
-              <div class="project-overlay"><h3>YTS Business Card</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>YTS Business Card</h3>
+              <p>Professional card design for client-facing use.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="YTS POST-CARD.jpg" data-lightbox="projects" data-title="YTS Post Card" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="print">
+            <a href="YTS POST-CARD.jpg" data-lightbox="projects" data-title="YTS Post Card" class="project-card tall">
               <img src="YTS POST-CARD.jpg" alt="YTS post card design">
-              <div class="project-overlay"><h3>YTS Post Card</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Print Design</span>
+              <h3>YTS Post Card</h3>
+              <p>Printed card layout with a stronger promotional feel.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="Pull up Banner.jpg" data-lightbox="projects" data-title="Pull-Up Banner" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="Pull up Banner.jpg" data-lightbox="projects" data-title="Pull-Up Banner" class="project-card tall">
               <img src="Pull up Banner.jpg" alt="Pull-up banner design">
-              <div class="project-overlay"><h3>Pull-Up Banner</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>Pull-Up Banner</h3>
+              <p>Large-format design for display and event visibility.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="Flier.jpg" data-lightbox="projects" data-title="YTS Flier" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="Flier.jpg" data-lightbox="projects" data-title="YTS Flier" class="project-card tall">
               <img src="Flier.jpg" alt="YTS flier design">
-              <div class="project-overlay"><h3>YTS Flier</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>YTS Flier</h3>
+              <p>Flyer layout made for quick attention and readability.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="Access poster.jpg" data-lightbox="projects" data-title="Access Poster" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="Access poster.jpg" data-lightbox="projects" data-title="Access Poster" class="project-card tall">
               <img src="Access poster.jpg" alt="Access poster design">
-              <div class="project-overlay"><h3>Access Poster</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>Access Poster</h3>
+              <p>Poster design with a direct message and strong contrast.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="1.jpg" data-lightbox="projects" data-title="Project Sample" class="project-card">
               <img src="1.jpg" alt="Creative project sample">
-              <div class="project-overlay"><h3>Project Sample</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>Project Sample</h3>
+              <p>Creative sample exploring style, layout, and identity.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 project-item" data-category="brand">
             <a href="B & Y.png" data-lightbox="projects" data-title="B & Y Logo" class="project-card">
               <img src="B & Y.png" alt="B and Y logo design">
-              <div class="project-overlay"><h3>B & Y Logo</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Brand Identity</span>
+              <h3>B & Y Logo</h3>
+              <p>Letter-based logo concept with a simple visual hook.</p>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <a href="Poster-Recovered.jpg" data-lightbox="projects" data-title="Trip Poster" class="project-card">
+          <div class="col-md-6 col-lg-4 project-item" data-category="posters">
+            <a href="Poster-Recovered.jpg" data-lightbox="projects" data-title="Trip Poster" class="project-card tall">
               <img src="Poster-Recovered.jpg" alt="Trip poster design">
-              <div class="project-overlay"><h3>Trip Poster</h3></div>
             </a>
+            <div class="work-info">
+              <span class="work-tag">Poster</span>
+              <h3>Trip Poster</h3>
+              <p>Travel-themed promotional design with event energy.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -679,45 +858,137 @@
 
     <section id="photos">
       <div class="container">
-        <h2 class="section-title">Photo Showcase</h2>
+        <h2 class="section-title">Captured Moments</h2>
         <p class="photo-intro">
-          Use this space for portraits, behind-the-scenes moments, event photos, studio shots, or any visuals that show the person and process behind your work.
+          A visual story wall for weddings, ceremonies, conferences, portraits, and the small moments that make real memories feel alive.
         </p>
 
+        <div class="photo-filters" aria-label="Filter photo stories">
+          <button class="photo-filter active" type="button" data-filter="all" aria-pressed="true">All Stories</button>
+          <button class="photo-filter" type="button" data-filter="weddings" aria-pressed="false">Weddings</button>
+          <button class="photo-filter" type="button" data-filter="ceremonies" aria-pressed="false">Ceremonies</button>
+          <button class="photo-filter" type="button" data-filter="conferences" aria-pressed="false">Conferences</button>
+          <button class="photo-filter" type="button" data-filter="portraits" aria-pressed="false">Portraits</button>
+          <button class="photo-filter" type="button" data-filter="random" aria-pressed="false">Random Moments</button>
+        </div>
+
         <div class="row g-4">
-          <!-- Replace these file names with your own photos. Keep the images in the same folder as this HTML file, or update the paths. -->
-          <div class="col-sm-6 col-lg-4">
-            <a href="photo-1.jpg" data-lightbox="photos" data-title="Creative Portrait" class="photo-card">
-              <img src="photo-1.jpg" alt="Creative portrait photo">
-              <span class="photo-caption">Creative Portrait</span>
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="weddings">
+            <a href="assets/photos/wedding-bride.jpg" data-lightbox="photos" data-title="Bridal Portrait" class="photo-card">
+              <img src="assets/photos/wedding-bride.jpg" alt="Bride in a white wedding dress outdoors">
+              <span class="photo-caption">Bridal Portrait <small>Soft light, detail, and presence</small></span>
             </a>
           </div>
 
-          <div class="col-sm-6 col-lg-4">
-            <a href="photo-2.jpg" data-lightbox="photos" data-title="Behind the Scenes" class="photo-card">
-              <img src="photo-2.jpg" alt="Behind the scenes creative work">
-              <span class="photo-caption">Behind the Scenes</span>
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="weddings">
+            <a href="assets/photos/wedding-couple.jpg" data-lightbox="photos" data-title="Wedding Couple" class="photo-card">
+              <img src="assets/photos/wedding-couple.jpg" alt="Bride and groom posing together outdoors">
+              <span class="photo-caption">Wedding Couple <small>Celebration framed with warmth</small></span>
             </a>
           </div>
 
-          <div class="col-sm-6 col-lg-4">
-            <a href="photo-3.jpg" data-lightbox="photos" data-title="Studio Moment" class="photo-card">
-              <img src="photo-3.jpg" alt="Studio work moment">
-              <span class="photo-caption">Studio Moment</span>
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="weddings">
+            <a href="assets/photos/wedding-portrait.jpg" data-lightbox="photos" data-title="Wedding Portrait" class="photo-card">
+              <img src="assets/photos/wedding-portrait.jpg" alt="Close portrait of a bride in wedding attire">
+              <span class="photo-caption">Wedding Portrait <small>Quiet emotion and elegance</small></span>
             </a>
           </div>
 
-          <div class="col-sm-6 col-lg-6">
-            <a href="photo-4.jpg" data-lightbox="photos" data-title="Event Coverage" class="photo-card wide">
-              <img src="photo-4.jpg" alt="Event coverage photo">
-              <span class="photo-caption">Event Coverage</span>
+          <div class="col-sm-6 col-lg-6 photo-item" data-category="weddings">
+            <a href="assets/photos/wedding-decor.jpg" data-lightbox="photos" data-title="Wedding Decor" class="photo-card wide">
+              <img src="assets/photos/wedding-decor.jpg" alt="Outdoor wedding decor and floral setup">
+              <span class="photo-caption">Wedding Decor <small>Atmosphere before the moment</small></span>
             </a>
           </div>
 
-          <div class="col-sm-6 col-lg-6">
-            <a href="photo-5.jpg" data-lightbox="photos" data-title="Featured Shot" class="photo-card wide">
-              <img src="photo-5.jpg" alt="Featured photography shot">
-              <span class="photo-caption">Featured Shot</span>
+          <div class="col-sm-6 col-lg-6 photo-item" data-category="weddings">
+            <a href="assets/photos/wedding-party.jpg" data-lightbox="photos" data-title="Wedding Party" class="photo-card wide">
+              <img src="assets/photos/wedding-party.jpg" alt="Wedding party group photo outdoors">
+              <span class="photo-caption">Wedding Party <small>The full story in one frame</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="ceremonies">
+            <a href="assets/photos/ceremony-graduate.jpg" data-lightbox="photos" data-title="Graduation Moment" class="photo-card">
+              <img src="assets/photos/ceremony-graduate.jpg" alt="Graduate posing with family at an outdoor ceremony">
+              <span class="photo-caption">Graduation Moment <small>Pride, family, and achievement</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="ceremonies">
+            <a href="assets/photos/ceremony-family.jpg" data-lightbox="photos" data-title="Family Celebration" class="photo-card">
+              <img src="assets/photos/ceremony-family.jpg" alt="Family and friends celebrating after a graduation">
+              <span class="photo-caption">Family Celebration <small>Shared joy after the milestone</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="ceremonies">
+            <a href="assets/photos/ceremony-evening.jpg" data-lightbox="photos" data-title="Evening Gathering" class="photo-card">
+              <img src="assets/photos/ceremony-evening.jpg" alt="People seated at an evening outdoor gathering">
+              <span class="photo-caption">Evening Gathering <small>Natural moments after the main event</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="conferences">
+            <a href="assets/photos/conference-audience.jpg" data-lightbox="photos" data-title="Conference Audience" class="photo-card">
+              <img src="assets/photos/conference-audience.jpg" alt="Conference audience seated in a training room">
+              <span class="photo-caption">Conference Audience <small>People, focus, and participation</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="conferences">
+            <a href="assets/photos/conference-session.jpg" data-lightbox="photos" data-title="Training Session" class="photo-card">
+              <img src="assets/photos/conference-session.jpg" alt="Training session with slides displayed on screens">
+              <span class="photo-caption">Training Session <small>Learning spaces and live interaction</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="conferences">
+            <a href="assets/photos/conference-speaker.jpg" data-lightbox="photos" data-title="Speaker Moment" class="photo-card">
+              <img src="assets/photos/conference-speaker.jpg" alt="Speaker presenting to a conference audience">
+              <span class="photo-caption">Speaker Moment <small>Ideas being shared in the room</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="portraits">
+            <a href="assets/photos/portrait-garden.jpg" data-lightbox="photos" data-title="Garden Portrait" class="photo-card">
+              <img src="assets/photos/portrait-garden.jpg" alt="Portrait of a woman standing in a garden">
+              <span class="photo-caption">Garden Portrait <small>Natural light and simple composition</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="portraits">
+            <a href="assets/photos/portrait-formal.jpg" data-lightbox="photos" data-title="Formal Portrait" class="photo-card">
+              <img src="assets/photos/portrait-formal.jpg" alt="Formal portrait outdoors">
+              <span class="photo-caption">Formal Portrait <small>Clean styling with outdoor depth</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="portraits">
+            <a href="assets/photos/portrait-innovation.jpg" data-lightbox="photos" data-title="Innovation Portrait" class="photo-card">
+              <img src="assets/photos/portrait-innovation.jpg" alt="Portrait in front of National ICT Innovation signage">
+              <span class="photo-caption">Innovation Portrait <small>Place, personality, and context</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="random">
+            <a href="assets/photos/random-smile.jpg" data-lightbox="photos" data-title="Candid Smile" class="photo-card">
+              <img src="assets/photos/random-smile.jpg" alt="Candid smiling portrait outdoors">
+              <span class="photo-caption">Candid Smile <small>A quick frame that feels alive</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="random">
+            <a href="assets/photos/random-child.jpg" data-lightbox="photos" data-title="Everyday Moment" class="photo-card">
+              <img src="assets/photos/random-child.jpg" alt="Child looking toward the camera">
+              <span class="photo-caption">Everyday Moment <small>Small stories worth noticing</small></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 photo-item" data-category="random">
+            <a href="assets/photos/random-style.jpg" data-lightbox="photos" data-title="Style Moment" class="photo-card">
+              <img src="assets/photos/random-style.jpg" alt="Stylized casual portrait with sunglasses">
+              <span class="photo-caption">Style Moment <small>Personality in a spontaneous frame</small></span>
             </a>
           </div>
         </div>
@@ -817,6 +1088,50 @@
     }
 
     typeText();
+
+    const workFilters = document.querySelectorAll(".work-filter");
+    const projectItems = document.querySelectorAll(".project-item");
+    const photoFilters = document.querySelectorAll(".photo-filter");
+    const photoItems = document.querySelectorAll(".photo-item");
+
+    function connectFilters(buttons, items) {
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selectedCategory = button.dataset.filter;
+
+          buttons.forEach((filter) => {
+            filter.classList.remove("active");
+            filter.setAttribute("aria-pressed", "false");
+          });
+
+          button.classList.add("active");
+          button.setAttribute("aria-pressed", "true");
+
+          items.forEach((item) => {
+            const shouldShow = selectedCategory === "all" || item.dataset.category === selectedCategory;
+            item.classList.toggle("is-hidden", !shouldShow);
+          });
+        });
+      });
+    }
+
+    connectFilters(workFilters, projectItems);
+    connectFilters(photoFilters, photoItems);
+
+    /*
+      To add real photos:
+      1. Put the optimized image in assets/photos.
+      2. Copy one .photo-item block.
+      3. Change data-category, href, src, alt, data-title, and caption text.
+    */
+
+    /*
+      To add real project work:
+      1. Copy one .project-item block.
+      2. Use one category: brand, print, posters, or merchandise.
+      3. Change the image, title, tag, and short description.
+    */
+
   </script>
 </body>
 </html>
